@@ -10,6 +10,7 @@ Basics
 --------------------
 It isn't a "good to go" project, you might need to make changes in scripts to make them fit for you. 
 
+0. Clone the project in `~/Playground/scripts`
 1. Initially - You should keep stuff in `~/Playground/scripts` (Suggestions are welcomed.)
 2. Copy or link the `.bash_aliases` to `~/.bash_aliases`, Source `.bashrc` by `source ~/.bashrc`
    OR
@@ -18,4 +19,11 @@ It isn't a "good to go" project, you might need to make changes in scripts to ma
 3. Add any script with extension `.bash` or `.sh` in `scripts`.
 4. You can execute script by `mscript $script_name_without_ext` or `ms $script_name_without_ext`
 
+
 Example: `ms robo`
+
+
+
+One liner ?
+-------------------
+''

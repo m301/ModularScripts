@@ -1,1 +1,0 @@
-/home/mad/.bash_aliases

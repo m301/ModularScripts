@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 choices=( apache-start remove-none digi-start digi-stop clear-unused clean-unused)
 
