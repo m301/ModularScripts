@@ -10,13 +10,12 @@ Basics
 --------------------
 It isn't a "good to go" project, you might need to make changes in scripts to make them fit for you. 
 
-0. Clone the project in `~/Playground/scripts`
-1. Initially - You should keep stuff in `~/Playground/scripts` (Suggestions are welcomed.)
-2. Copy or link the `.bash_aliases` to `~/.bash_aliases`, Source `.bashrc` by `source ~/.bashrc`
+0. Clone the project in a directory.
+2. Copy or link the `bash_aliases.sh` to `~/.bash_aliases`, Source `.bashrc` by `source ~/.bashrc`
    OR
-    add `source ~/Playground/.bash_aliases` in `.bashrc`
+    add `source ~/bash_aliases.sh` in `.bashrc`
        
-3. Add any script with extension `.bash` or `.sh` in `scripts`.
+3. Add any script with extension `.bash` or `.sh` in `custom`.
 4. You can execute script by `mscript $script_name_without_ext` or `ms $script_name_without_ext`
 
 
@@ -26,4 +25,4 @@ Example: `ms robo`
 
 One liner ?
 -------------------
-''
+`curl https://raw.githubusercontent.com/m301/ModularScripts/master/install.sh | bash -s ~/.mscripts`

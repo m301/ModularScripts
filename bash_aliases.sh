@@ -8,7 +8,10 @@
 alias ms='mscript'
 mscript(){
   path=$MS_PLAYGROUND_ROOT/custom/$1
-  if [ -e "$path.sh" ]
+
+  if [ $# -eq 0 ]; then
+    echo "You need to pass script name placed in $MS_PLAYGROUND_ROOT/custom"
+  elif [ -e "$path.sh" ]
   then
    bash $path.sh "${@:2}"
   elif [ -e "$path.bash" ] ;then
