@@ -27,14 +27,13 @@ _autocomplete()
   COMPREPLY=()
   cur="${COMP_WORDS[COMP_CWORD]}"
   prev=${COMP_WORDS[COMP_CWORD-1]}
-  _script_commands=$( sh $MS_PLAYGROUND_ROOT/shortlist.sh  ${prev} ${COMP_CWORD})
+  _script_commands=$(sh $MS_PLAYGROUND_ROOT/shortlist.sh ${prev} ${COMP_CWORD})
 
   COMPREPLY=( $(compgen -W "${_script_commands}" -- ${cur}) )
   return 0
 }
 
 complete -o nospace -F _autocomplete ms
-
 
 # Add more aliases here !
 sshroot(){

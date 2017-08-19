@@ -22,7 +22,27 @@ It isn't a "good to go" project, you might need to make changes in scripts to ma
 Example: `ms robo`
 
 
-
 One liner ?
 -------------------
+To install you can use one liner given below, It will install scripts in `~/.mscripts`.
+
+ 
 `curl https://raw.githubusercontent.com/m301/ModularScripts/master/install.sh | bash -s ~/.mscripts`
+
+
+
+Subcommand autocompletion
+-----------------------------
+If you want your custom script to support autocompletion, Simply echo possible commands list if first argument is `shortlist`.
+
+NOTE: For autocompletion your script should have extension `.sh` or `.bash`.
+Example:
+```bash
+if [ $1 = 'shortlist' ]; then 
+    echo "command1 command2 command3"
+    exit 0 
+fi
+
+# One liner
+if [ $1 = 'shortlist' ]; then echo "command1 command2 command3"; exit 0; fi;
+```
