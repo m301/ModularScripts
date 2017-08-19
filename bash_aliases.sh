@@ -11,10 +11,9 @@ mscript(){
 
   if [ $# -eq 0 ]; then
     echo "You need to pass script name placed in $MS_PLAYGROUND_ROOT/custom"
-  elif [ -e "$path.sh" ]
-  then
+  elif [ -e "$path.sh" ]; then
    bash $path.sh "${@:2}"
-  elif [ -e "$path.bash" ] ;then
+  elif [ -e "$path.bash" ];then
    sh $path.bash "${@:2}"
   else
    echo "$path.{sh,bash} not found."
@@ -28,7 +27,7 @@ _autocomplete()
   COMPREPLY=()
   cur="${COMP_WORDS[COMP_CWORD]}"
   prev=${COMP_WORDS[COMP_CWORD-1]}
-  _script_commands=$( ms shortlist ${prev} ${COMP_CWORD})
+  _script_commands=$( sh $MS_PLAYGROUND_ROOT/shortlist.sh  ${prev} ${COMP_CWORD})
 
   COMPREPLY=( $(compgen -W "${_script_commands}" -- ${cur}) )
   return 0
