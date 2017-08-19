@@ -10,9 +10,9 @@ mscript(){
   path=$MS_PLAYGROUND_ROOT/custom/$1
   if [ -e "$path.sh" ]
   then
-   bash $path.bash "${@:2}"
+   bash $path.sh "${@:2}"
   elif [ -e "$path.bash" ] ;then
-   sh $path.sh "${@:2}"
+   sh $path.bash "${@:2}"
   else
    echo "$path.{sh,bash} not found."
   fi

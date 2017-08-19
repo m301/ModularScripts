@@ -1,16 +1,20 @@
 #!/usr/bin/env sh
 
-INSTALL_DIR=$(echo ~/Playground/scriptss)
+if [ $# -eq 0 ]; then
+  echo "Please specify install directory."
+  exit 1
+fi
 
-sudo rm -r $INSTALL_DIR
+INSTALL_DIR=$(echo $1)
+
 mkdir -p $INSTALL_DIR
 cd $INSTALL_DIR
 
 git clone https://github.com/m301/ModularScripts.git .
 
-chmod +x "$INSTALL_DIR/*.sh" "$INSTALL_DIR/*.bash"
+chmod +x $INSTALL_DIR/*.sh
 
 sed -i.bak '/^export MS_PLAYGROUND_ROOT/ d' ~/.bashrc
-echo "export MS_PLAYGROUND_ROOT=\"$INSTALL_DIR\" && . \"$INSTALL_DIR/bash_aliases.sh" >> ~/.bashrc
+echo "export MS_PLAYGROUND_ROOT=\"$INSTALL_DIR\" && . \"$INSTALL_DIR/bash_aliases.sh\"" >> ~/.bashrc
 
 source ~/.bashrc
