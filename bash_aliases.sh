@@ -1,4 +1,10 @@
 #!/usr/bin/env sh
+# if ZSH is define bash
+if [ -n "$ZSH_VERSION" ]; then
+    # https://github.com/tmux-python/tmuxp/issues/190
+    autoload bashcompinit
+    bashcompinit
+fi
 # Load z, A good tool to navigate quickly
 .  "$MS_PLAYGROUND_ROOT/z/z.sh"
 
@@ -7,16 +13,16 @@
 # It looks f
 alias ms='mscript'
 mscript(){
-  path=$MS_PLAYGROUND_ROOT/custom/$1
+  spath=$MS_PLAYGROUND_ROOT/custom/$1
 
   if [ $# -eq 0 ]; then
     echo "You need to pass script name placed in $MS_PLAYGROUND_ROOT/custom"
-  elif [ -e "$path.sh" ]; then
-   bash $path.sh "${@:2}"
-  elif [ -e "$path.bash" ];then
-   sh $path.bash "${@:2}"
+  elif [ -e "$spath.sh" ]; then
+   bash $spath.sh "${@:2}"
+  elif [ -e "$spath.bash" ];then
+   sh $spath.bash "${@:2}"
   else
-   echo "$path.{sh,bash} not found."
+   echo "$spath.{sh,bash} not found."
   fi
 }
 
@@ -34,7 +40,7 @@ _autocomplete()
 }
 
 complete -o nospace -F _autocomplete ms
-
+#compdef _autocomplete ms
 # Add more aliases here !
 sshroot(){
  ssh root@$1
